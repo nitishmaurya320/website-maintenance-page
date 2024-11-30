@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <p class="Maintenance"> Website is  under Maintenance</p>
+            <h1><b>We're <span>Launching </span> soon in</b></h1>
+            <div class="time">
+                <div><p class="day">00</p>
+                <span>  Days</span></div>
+                <div><p class="hour">00</p>
+                <span>Hours</span></div>
+                <div><p class="minute">00</p>
+                <span>Minutes</span></div>
+                <div><p class="second">00</p>
+                <span>Seconds</span></div>
+            </div>
+        </div>
+        <img src="rocket.png" class="rocket">
+        
+        
+    </div>
+    <script>
+        var launchdate=new Date("Dec 2, 2024 00:16:00 ").getTime();
+        
+        
+        var x=setInterval(function(){
+            var currentdate=new Date().getTime();
+            var distance=launchdate-currentdate;
+        var days=Math.floor(distance/(1000*60*60*24));
+        var hour=Math.floor((distance/(1000*60*60))%24);
+        var minute=Math.floor((distance/(1000*60))%60);
+        var seconds=Math.floor(distance/(1000)%60);
+
+        document.querySelector('.day').innerText=days;
+        document.querySelector('.hour').innerHTML=hour;
+        document.querySelector('.minute').innerHTML=minute;
+        document.querySelector('.second').innerHTML=seconds;
+        },1000 );
+
+        
+        console.log(minute);    
+    </script>
+</body>
+</html>
